@@ -78,10 +78,10 @@ export default function Nav() {
     <NavStyles>
       <ul>
         <li>
-          <Link to="/">Hot Now</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/pizzas/">Pizza Menu</Link>
+          <Link to="/pizzas/">Projects</Link>
         </li>
         <li className="logo-item">
           <Link to="/">
@@ -89,10 +89,10 @@ export default function Nav() {
           </Link>
         </li>
         <li>
-          <Link to="/slicemasters">SliceMasters</Link>
+          <Link to="/slicemasters">About</Link>
         </li>
         <li>
-          <Link to="/order">Order Ahead!</Link>
+          <Link to="/order">Contact</Link>
         </li>
       </ul>
     </NavStyles>
