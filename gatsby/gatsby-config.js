@@ -21,8 +21,10 @@ export default {
             contentTypes: [
             // List of the Content Types you want to be able to request from Gatsby.
             'article',
+            //'home-page',
             'user'
           ],
+          singleTypes: ["home-page"],
           queryLimit: 1000,
         },
     },

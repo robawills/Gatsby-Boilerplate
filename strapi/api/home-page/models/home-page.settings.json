@@ -1,8 +1,8 @@
 {
   "kind": "singleType",
-  "collectionName": "home_page",
+  "collectionName": "home-page",
   "info": {
-    "name": "Home-page",
+    "name": "home-page",
     "description": ""
   },
   "options": {
