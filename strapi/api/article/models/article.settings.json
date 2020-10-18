@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "article",
+  "info": {
+    "name": "Article",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hero_text": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}
