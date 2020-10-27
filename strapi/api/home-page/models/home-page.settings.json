@@ -15,6 +15,11 @@
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "Booking": {
+      "type": "component",
+      "repeatable": false,
+      "component": "calendar.calendar"
     }
   }
 }

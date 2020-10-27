@@ -1,0 +1,14 @@
+{
+  "collectionName": "calendar",
+  "info": {
+    "name": "Calendar",
+    "icon": "calendar-check"
+  },
+  "options": {},
+  "attributes": {
+    "booking": {
+      "type": "date",
+      "unique": true
+    }
+  }
+}
