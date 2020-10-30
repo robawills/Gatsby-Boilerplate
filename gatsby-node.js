@@ -1,7 +1,28 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+exports.createPages = async ({ graphql, actions: { createPage } }) => {
+    const {
+        data: {
+            gcms: { projectList },
+        },
+    } = await graphql(`
+        {
+            gcms {
+                projectList {
+                    id 
+                    slug
+                }
+            }
+        }
+    `);
 
-// You can delete this file if you're not using it
+    projectList.forEach(({ id, slug }) =>
+      createPage({
+          path: `/project/${slug}`,
+          component: require.resolve(`./src/templates/Project.js`),
+          context: {
+              id,
+          }
+      })  
+    );
+};
+
+

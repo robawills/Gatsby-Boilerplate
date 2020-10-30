@@ -80,9 +80,9 @@ const Form = styled.div`
 `;
 
 
-export default function IndexPage({ data }) {
+export default function IndexPage() {
 
-  const {gcms: {homePages}} = useStaticQuery(pageQuery) 
+  const {gcms: {homePages, projectList}} = useStaticQuery(pageQuery) 
 
   useEffect(() => {
     const formElement = document.querySelector('#contact-form');
@@ -107,6 +107,13 @@ export default function IndexPage({ data }) {
       {homePages.map(({...homePage}) =>
         <h1 key="{homePage.id}">{homePage.heroText}</h1>
       )}
+      
+      {projectList.map(({...project}) =>
+        <Link to={`/project/${project.slug}`} key="{project.id}">
+          <h1>{project.name}</h1>
+        </Link>
+      )}
+
       <Form>
         <form id="contact-form" action="https://getform.io/f/9cc66643-f264-4629-8b90-d022b29ab8d6" method="POST">
           <input type="text" name="name"/>
@@ -124,6 +131,7 @@ export default function IndexPage({ data }) {
 
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>
+
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
         <Image />
       </div>
@@ -135,11 +143,17 @@ export default function IndexPage({ data }) {
 }
 
 export const pageQuery = graphql`
-  query {
+  query  {
     gcms {
       homePages(first: 1) {
         heroText
         id
+      }
+      projectList {
+        id
+        name
+        discription
+        slug
       }
     }
   }
